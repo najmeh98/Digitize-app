@@ -40,18 +40,88 @@
     <div class=" grid grid-cols-12  md:grid-rows-[55px_minmax(500px,_1fr)] sm:gap-x-4  md:gap-x-6 md:gap-y-10">
 
         <!-- sidebar -->
-        <div class=" hidden md:block  p-4 bg-white   col-span-4 md:col-span-3 row-span-2">
-            sidebar
+        <div class=" hidden bg-white rounded-xl pr-6 pt-6 md:block col-span-4 md:col-span-3 row-span-2">
+
+            <div class="text-xl text-[#FF755C] mb-5">دسته بندی‌</div>
+
+            <ul class="space-y-[18px]">
+                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8 ">
+
+                    <img class="w-6 h-6" src="/utilies/images/phonesvg.svg" alt="..." />
+                    <span class=" pr-2">
+                        تلفن همراه
+                    </span>
+
+                </li>
+                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
+
+
+                    <img class="w-6 h-6" src="/utilies/images/laptopsvg.svg" alt="..." />
+                    <span class=" pr-2">
+                        لپ تاپ
+                    </span>
+                </li>
+                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
+
+
+                    <img class="w-6 h-6" src="/utilies/images/watchsvg.svg" alt="..." />
+                    <span class=" pr-2">
+                        ساعت هوشمند
+                    </span>
+
+                </li>
+            </ul>
+
+            <hr class=" ml-4 mt-4 h-px bg-gray-300 border-0">
+
+
         </div>
 
         <!-- sort section -->
         <div class=" hidden md:block  bg-white rounded-md  md:col-span-9  lg:col-span-9 ">
 
-            <div class="flex items-center px-4 gap-x-4">
-                <button class="py-4 text-gray-400 text-base cursor-pointer">محبوب‌ترین محصول </button>
-                <button class="py-4 text-gray-400 text-base cursor-pointer">پربازدیدترین محصول</button>
-                <button class="py-4 text-gray-400 text-base cursor-pointer">گران‌ترین محصول </button>
-                <button class="py-4 text-gray-400 text-base cursor-pointer">ارزان ترین محصول </button>
+            <div x-data="{sort : 1 , activeClass: 'text-slate-800 font-bold'}" class="flex items-center px-4 gap-x-4">
+
+                <img src="/utilies/images/Sort2.png" alt="sort" class="py-[6px]">
+
+                <button @click="sort = 1" :class=" sort === 1 ? activeClass : '' "
+                    class="py-4 text-gray-400 text-base cursor-pointer relative">
+
+                    <span>
+                        محبوب‌ترین محصول
+                    </span>
+
+                    <span x-show="sort === 1" class="w-2 h-2 rounded-full bg-orange-600 absolute top-2 -left-1"></span>
+                </button>
+
+                <button @click="sort = 2" :class=" sort === 2 ? activeClass : '' "
+                    class="py-4 text-gray-400 text-base cursor-pointer">
+
+                    <span>
+                        پربازدیدترین محصول
+                    </span>
+                    <span x-show="sort === 2" class="w-2 h-2 rounded-full bg-orange-600 absolute -left-1 top-2"></span>
+                </button>
+
+                <button @click="sort = 3" :class=" sort === 3 ? activeClass : '' "
+                    class="py-4 text-gray-400 text-base cursor-pointer">
+
+                    <span>
+                        گران‌ترین محصول
+                    </span>
+
+                    <span x-show="sort === 3" class="w-2 h-2 rounded-full bg-orange-600 absolute -left-1 top-2"></span>
+                </button>
+
+                <button @click="sort = 4" :class=" sort === 4 ? activeClass : '' "
+                    class="py-4 text-gray-400 text-base cursor-pointer">
+
+                    <span>
+                        ارزان ترین محصول
+                    </span>
+                    <span x-show="sort === 4" class="w-2 h-2 rounded-full bg-orange-600 absolute -left-1 top-2"></span>
+
+                </button>
 
 
             </div>
