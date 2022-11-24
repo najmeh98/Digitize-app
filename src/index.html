@@ -40,41 +40,204 @@
     <div class=" grid grid-cols-12  md:grid-rows-[55px_minmax(500px,_1fr)] sm:gap-x-4  md:gap-x-6 md:gap-y-10">
 
         <!-- sidebar -->
-        <div class=" hidden bg-white rounded-xl pr-6 pt-6 md:block col-span-4 md:col-span-3 row-span-2">
+        <div class=" hidden  rounded-xl  md:block col-span-4 md:col-span-3 row-span-2">
 
-            <div class="text-xl text-[#FF755C] mb-5">دسته بندی‌</div>
+            <div class="bg-white rounded-xl pr-6 pl-10 pt-6  pb-12">
+                <div class="text-xl text-[#FF755C] mb-5">دسته بندی‌</div>
 
-            <ul class="space-y-[18px]">
-                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8 ">
+                <ul class="space-y-[18px]">
+                    <li class=" flex items-center  text-xl text-gray-300 font-light leading-8 ">
 
-                    <img class="w-6 h-6" src="/utilies/images/phonesvg.svg" alt="..." />
-                    <span class=" pr-2">
-                        تلفن همراه
-                    </span>
+                        <img class="w-6 h-6" src="/utilies/images/phonesvg.svg" alt="..." />
+                        <span class=" pr-2">
+                            تلفن همراه
+                        </span>
 
-                </li>
-                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
-
-
-                    <img class="w-6 h-6" src="/utilies/images/laptopsvg.svg" alt="..." />
-                    <span class=" pr-2">
-                        لپ تاپ
-                    </span>
-                </li>
-                <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
+                    </li>
+                    <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
 
 
-                    <img class="w-6 h-6" src="/utilies/images/watchsvg.svg" alt="..." />
-                    <span class=" pr-2">
-                        ساعت هوشمند
-                    </span>
-
-                </li>
-            </ul>
-
-            <hr class=" ml-4 mt-4 h-px bg-gray-300 border-0">
+                        <img class="w-6 h-6" src="/utilies/images/laptopsvg.svg" alt="..." />
+                        <span class=" pr-2">
+                            لپ تاپ
+                        </span>
+                    </li>
+                    <li class=" flex items-center  text-xl text-gray-300 font-light leading-8">
 
 
+                        <img class="w-6 h-6" src="/utilies/images/watchsvg.svg" alt="..." />
+                        <span class=" pr-2">
+                            ساعت هوشمند
+                        </span>
+
+                    </li>
+                </ul>
+                <hr class=" ml-4 mt-4 mb-4 h-px bg-gray-300 border-0">
+
+
+                <div class="text-xl text-[#FF755C] mb-5 ">
+                    فیلتر
+                </div>
+
+                <ul class="space-y-[30px]">
+
+                    <div x-data="{isOpenBrand: true}">
+
+                        <div @click="isOpenBrand = !isOpenBrand" class="flex items-center justify-between w-full mb-5 ">
+
+                            <div class="flex items-center justify-center">
+                                <li class=" flex items-center  text-lg text-slate-800 font-light leading-8 ">
+
+                                    <img class="w-7 h-7" src="/utilies/images/home.svg" alt="..." />
+
+                                    <span class=" pr-3">
+                                        برند محصول
+                                    </span>
+                                </li>
+                            </div>
+
+
+
+                            <div :class="isOpenBrand ? 'rotate-180' : '' " class="transition-all duration-700">
+
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.20999 4.44154C2.31291 4.44154 2.41582 4.47946 2.49707 4.56071L6.02874 8.09238C6.28874 8.35238 6.71124 8.35238 6.97124 8.09238L10.5029 4.56071C10.66 4.40363 10.92 4.40363 11.0771 4.56071C11.2342 4.71779 11.2342 4.97779 11.0771 5.13488L7.54541 8.66654C6.97124 9.24071 6.03416 9.24071 5.45457 8.66654L1.92291 5.13488C1.76582 4.97779 1.76582 4.71779 1.92291 4.56071C2.00416 4.48488 2.10707 4.44154 2.20999 4.44154Z"
+                                        fill="#222F5D" />
+                                </svg>
+                            </div>
+                        </div>
+
+
+                        <div x-show="isOpenBrand === true" class=" space-y-3">
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+
+
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    اپل </span>
+                            </li>
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+
+
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    سامسونگ </span>
+
+                            </li>
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+
+
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    شیائومی </span>
+                            </li>
+
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+
+
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    هواوی </span>
+                            </li>
+                        </div>
+                    </div>
+
+                    <!-- color of product -->
+                    <div x-data="{isOpenProduct : true}">
+
+                        <div @click="isOpenProduct = !isOpenProduct"
+                            class="flex items-center justify-between w-full mb-5 ">
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <img src="/utilies/images/color-swatch.svg" alt="" class="w-7 h-7" srcset=""> <span
+                                    class=" pr-3">
+                                    رنگ محصول
+                                </span>
+
+                            </li>
+
+
+
+                            <div :class="isOpenProduct ? 'rotate-180' : ''" class="transition-all duration-700">
+
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.20999 4.44154C2.31291 4.44154 2.41582 4.47946 2.49707 4.56071L6.02874 8.09238C6.28874 8.35238 6.71124 8.35238 6.97124 8.09238L10.5029 4.56071C10.66 4.40363 10.92 4.40363 11.0771 4.56071C11.2342 4.71779 11.2342 4.97779 11.0771 5.13488L7.54541 8.66654C6.97124 9.24071 6.03416 9.24071 5.45457 8.66654L1.92291 5.13488C1.76582 4.97779 1.76582 4.71779 1.92291 4.56071C2.00416 4.48488 2.10707 4.44154 2.20999 4.44154Z"
+                                        fill="#222F5D" />
+                                </svg>
+                            </div>
+                        </div>
+
+
+                        <div x-show="isOpenProduct === true" class="space-y-3 ">
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    آبی
+                                </span>
+                            </li>
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    قرمز
+                                </span>
+                            </li>
+
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    سبز
+                                </span>
+                            </li>
+
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    سیاه </span>
+                            </li>
+
+                            <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                                <input class="w-5 h-5" type="checkbox" name="" id="">
+                                <span class=" pr-3">
+                                    سفید
+                                </span>
+                            </li>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- price of product -->
+                    <div class="flex items-center justify-between w-full mb-5">
+                        <li class=" flex items-center  text-lg text-slate-800 font-light leading-8">
+                            <img src="/utilies/images/fee.svg" alt="" srcset="" class="w-7 h-7"> <span class=" pr-3">
+                                محدوده قیمت
+                            </span>
+
+                        </li>
+
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.20999 4.44154C2.31291 4.44154 2.41582 4.47946 2.49707 4.56071L6.02874 8.09238C6.28874 8.35238 6.71124 8.35238 6.97124 8.09238L10.5029 4.56071C10.66 4.40363 10.92 4.40363 11.0771 4.56071C11.2342 4.71779 11.2342 4.97779 11.0771 5.13488L7.54541 8.66654C6.97124 9.24071 6.03416 9.24071 5.45457 8.66654L1.92291 5.13488C1.76582 4.97779 1.76582 4.71779 1.92291 4.56071C2.00416 4.48488 2.10707 4.44154 2.20999 4.44154Z"
+                                fill="#222F5D" />
+                        </svg>
+
+
+                    </div>
+                </ul>
+
+            </div>
         </div>
 
         <!-- sort section -->
